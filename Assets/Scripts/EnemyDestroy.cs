@@ -15,11 +15,12 @@ public class EnemyDestroy : MonoBehaviour {
 
 	Rigidbody2D rbEnemy;
 
-	public GameObject player;
+	GameObject player;
 
 	void Start  ()
 	{
 		rbEnemy = GetComponent<Rigidbody2D>();
+		player = GameObject.FindWithTag ("Player");
 	}
 
 	void Update ()
