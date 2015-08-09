@@ -35,7 +35,8 @@ public class EnemyDestroy : MonoBehaviour {
 		}
 		//float angle = Mathf.Atan2(player.gameObject.transform.position.y - transform.position.y, player.gameObject.transform.position.x - transform.position.x) * 180 / Mathf.PI;
 
-		Vector2 velocity = new Vector2((transform.position.x - player.gameObject.transform.position.x) * speed, (transform.position.y - player.gameObject.transform.position.y) * speed);
+		Vector2 velocity = transform.position - player.transform.position;
+		velocity = velocity.normalized * speed;
 
 		rbEnemy.velocity = -velocity;
 	}
